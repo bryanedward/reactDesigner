@@ -16,7 +16,8 @@ export default class MovieList extends Component{
             {peliculas.map(res => {
                 return(
                     <div key = {res.imdbID} className = 'listaItem'>
-                        <Movie 
+                        <Movie
+                        Idimdb = {res.imdbID} 
                         Title = {res.Title}
                         Poster = {res.Poster}
                         Year = {res.Year}
@@ -27,7 +28,6 @@ export default class MovieList extends Component{
                 })
             }     
             </div>
-        ) 
-         
+        )         
     }
 }

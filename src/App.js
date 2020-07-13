@@ -1,36 +1,23 @@
 import React, { Component } from 'react';
-import Search from './components/Search';
 import './App.css';
 import 'bulma/css/bulma.css'
-import MovieList from './components/MovieList';
-
+import { Route, Switch } from 'react-router-dom'
+import VistaPeliculas from './views/VistaPeliculas'
+import Home from  './pages/Home'
+import {NotFound} from './views/NoteFound'
 
 class App extends Component {
-  
-  state = {
-    peliculas : []
-  }
-
-  _data = (response) => {
-    this.setState({peliculas: response})
-  }
-
   render(){
-    return (
-      <div className="App">
-          <div className="search">
-          <Search
-            onData = {this._data}
-          />
-          </div>
-          {this.state.peliculas.length === 0 
-            ? 'Sin Resultados'
-            : <MovieList 
-              peliculas = {this.state.peliculas} /> 
-          }          
-      </div>
-    );
-  }
+    return(
+    <div className="App">
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route path = '/VistaPeliculas/:Idimdb' component={VistaPeliculas}/>
+        <Route component ={NotFound}/>
+      </Switch>
+    </div>
+    )
+  }  
 }
 
 export default App;

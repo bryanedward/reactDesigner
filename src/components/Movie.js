@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 export default class Movie extends Component{
@@ -8,13 +9,14 @@ export default class Movie extends Component{
         Title : PropTypes.string,
         Poster : PropTypes.string,
         Year: PropTypes.string,
-        Type: PropTypes.string
+        Type: PropTypes.string,
+        Idimdb : PropTypes.string
     }
     
     render(){
-        const { Title, Poster, Year, Type } = this.props
+        const { Title, Poster, Year, Type, Idimdb } = this.props
         return(
-            <div className="card">
+            <Link className="card" to = {`/VistaPeliculas/${Idimdb}`}>
                 <div className="card-image">
                     <figure className="image ">
                     <img src= {Poster}
@@ -27,7 +29,7 @@ export default class Movie extends Component{
                     </div>
                 </div>
                 <br/>
-            </div>
+            </Link>
         )
     }
 }

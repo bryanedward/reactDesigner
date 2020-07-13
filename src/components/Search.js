@@ -22,15 +22,13 @@ export default class Search  extends Component {
                 </div>
                 <div className="control">
                     <button className="button is-info">
-                    Search
+                        Buscar
                     </button>
                 </div>
                 </div>
             </form>
         )
     }
-
-
     _setearDato = (e) => {
         // capturar el dato
         this.setState({nombrePelicula : e.target.value})
@@ -41,7 +39,8 @@ export default class Search  extends Component {
         fetch(`https://www.omdbapi.com/?s=${this.state.nombrePelicula}&apikey=${API_KEY}`)
             .then(res => res.json())
             .then(results => {
-                const {Search} = results
+                // asignacion de un array para ingresar
+                const {Search = []} = results
                 console.log(Search)
                 this.props.onData(Search)
             });
