@@ -1,0 +1,33 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
+
+export default class Movie extends Component{
+    
+    static propTypes = {
+        Title : PropTypes.string,
+        Poster : PropTypes.string,
+        Year: PropTypes.string,
+        Type: PropTypes.string
+    }
+    
+    render(){
+        const { Title, Poster, Year, Type } = this.props
+        return(
+            <div className="card">
+                <div className="card-image">
+                    <figure className="image ">
+                    <img src= {Poster}
+                    alt={Title}/>
+                    </figure>
+                    <div className="media-content">
+                        <p className="title is-4">{Title}</p>
+                        <p className="subtitle is-6">{Type}</p>
+                        <p>{Year}</p>
+                    </div>
+                </div>
+                <br/>
+            </div>
+        )
+    }
+}

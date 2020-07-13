@@ -1,33 +1,36 @@
-import React, {StrictMode, Component} from 'react';
+import React, { Component } from 'react';
+import Search from './components/Search';
 import './App.css';
 import 'bulma/css/bulma.css'
-import {Title} from './components/Title'
-import {Search} from './components/Search'
+import MovieList from './components/MovieList';
+
 
 class App extends Component {
-
-
+  
   state = {
-    respuestas : []
+    peliculas : []
   }
 
-  _obtenerDatos = (respuestas) => {
-    console.log(respuestas)
+  _data = (response) => {
+    this.setState({peliculas: response})
   }
 
   render(){
     return (
-      <StrictMode>
       <div className="App">
-        <Title>Hola desde la pagina de  brian</Title>
-        <div className='search'>
-          <Search name = "hola"/>
-        </div>
+          <div className="search">
+          <Search
+            onData = {this._data}
+          />
+          </div>
+          {this.state.peliculas.length === 0 
+            ? 'Sin Resultados'
+            : <MovieList 
+              peliculas = {this.state.peliculas} /> 
+          }          
       </div>
-      </StrictMode>
     );
   }
-  
 }
 
 export default App;

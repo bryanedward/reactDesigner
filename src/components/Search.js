@@ -3,29 +3,11 @@ import React, { Component } from 'react'
 
 const API_KEY = 'b40d5b28';
 
-export class Search  extends Component {
+export default class Search  extends Component {
     
     state = {
         nombrePelicula : ' '
     }
-
-
-    _setearDato = (e) => {
-        // capturar el dato
-        this.setState({nombrePelicula : e.target.value})
-    }
-
-    _ConsultaApi = (e) => {
-        e.preventDefault()
-        fetch(`https://www.omdbapi.com/?s=${this.state.nombrePelicula}&apikey=${API_KEY}`)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(myJson) {
-                console.log(this.props.name)
-            });
-    }
-
 
     render(){
         return(
@@ -45,10 +27,25 @@ export class Search  extends Component {
                 </div>
                 </div>
             </form>
-            
         )
     }
 
+
+    _setearDato = (e) => {
+        // capturar el dato
+        this.setState({nombrePelicula : e.target.value})
+    }
+
+    _ConsultaApi = (e) => {
+        e.preventDefault()
+        fetch(`https://www.omdbapi.com/?s=${this.state.nombrePelicula}&apikey=${API_KEY}`)
+            .then(res => res.json())
+            .then(results => {
+                const {Search} = results
+                console.log(Search)
+                this.props.onData(Search)
+            });
+    }
 }
 
 
