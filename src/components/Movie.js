@@ -23,7 +23,7 @@ export default class Movie extends Component{
                     alt={Title}/>
                     </figure>
                     <div className="media-content">
-                        <p className="title is-4">{Title}</p>
+                        {/* <p className="title is-4">{Title}</p> */}
                         <p className="subtitle is-6">{Type}</p>
                         <p>{Year}</p>
                     </div>

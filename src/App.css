@@ -1,14 +1,7 @@
 .App {
   text-align: center;
-  padding-top: 39px;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
 
 /* ---------------------------- */
 
@@ -22,19 +15,29 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 16px;
+  padding: 2px;
 }
+
 
 
 .listaItem{
-  width: 48%;
+  width: 20%;
   height: auto;
-  margin-bottom: 24px;
+  margin: 10px 1px 0px 0px;
+}
+
+.title{
+  color: #61dafb;
 }
 
 
-
-
+footer{
+  position: fixed;
+  left:0;
+  bottom:0;
+  right:0;
+  height: 10%;
+}
 
 
 /* ----------------------------- */
@@ -42,6 +45,27 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .listPeliculas{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2px;
+}
+
+
+
+.listaItem{
+  width: 48%;
+  height: auto;
+  margin: 10px 0px 0px 0px;
+}
+
 }
 
 .App-header {

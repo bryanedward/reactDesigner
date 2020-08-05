@@ -38,24 +38,21 @@ export default class VistaPeliculas  extends Component{
     
 
     render(){
-        const { Actors, Awards, Genre, Poster, Title, Years  } = this.state.movie
+        const { Actors, Awards, Genre, Poster, Title, Year  } = this.state.movie
         return(
             <div className="card">
-            
-            <ButtonBack />            
+            {/* <ButtonBack />             */}
             <div className="card-image">
-              <figure className="image is-4by3">
+
+              <figure className="image is-12x12" >
                 <img src={Poster} alt={Poster}/>
               </figure>
             </div>
             <div className="card-content">
               <div className="media">
-                <div className="media-left">
-                  
-                </div>
                 <div className="media-content">
                   <p className="title is-4">{Title}</p>
-                  <p className="subtitle is-6">{Years}</p>
+                  <p className="subtitle is-6">{Year}</p>
                 </div>
               </div>
           
