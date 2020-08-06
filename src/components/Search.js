@@ -21,7 +21,7 @@ export default class Search  extends Component {
                         placeholder="Buscar pelicula"/>
                 </div>
                 <div className="control">
-                    <button className="button is-info">
+                    <button className="button is-info is-outlined">
                         Buscar
                     </button>
                 </div>

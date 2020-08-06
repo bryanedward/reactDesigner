@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import {ButtonBack} from '../components/Button';
 
 const API_KEY = 'b40d5b28';
 
@@ -19,7 +18,6 @@ export default class VistaPeliculas  extends Component{
     }
 
     componentDidMount(){
-        // console.log(this.props.match.params.Idimdb)
         const { Idimdb } = this.props.match.params;
         
         this._consultarPelicula({Idimdb})
