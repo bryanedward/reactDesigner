@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Search from '../components/Search';
-import MovieList from '../components/MovieList';
-import Footer from '../components/Footer';
+import Search from '../components/containersFirst/Search';
+import MovieList from '../components/containersFirst/MovieList';
+import Footer from '../components/containersFirst/Footer';
 
 export default class Home extends Component {
 
