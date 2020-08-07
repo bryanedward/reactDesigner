@@ -1,5 +1,5 @@
 import React from 'react'
-import {ButtonBack} from '../components/containersFirst/Button';
+import {ButtonBack} from '../Button';
 
 export const NotFound = () => (
     <div>
