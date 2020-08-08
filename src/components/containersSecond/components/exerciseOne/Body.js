@@ -21,8 +21,6 @@ const MyBody = () => (
         <Card contact={{name:"super", last_name:"gato", imgUrl:"https://url2.cl/6vsF8"}}/>
         <Card contact={{ name:"gato", last_name:"man", imgUrl:"https://url2.cl/6vsF8"}}/>
         <Button>Normal Button</Button>
-
-        
     </div>
 )
 
